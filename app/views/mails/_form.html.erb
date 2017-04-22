@@ -10,24 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :size %>
-    <%= f.text_field :size %>
+<form>
+  <div class="form-group">
+    <!-- <# f.label :size %> -->
+    <!-- <# f.text_field :size %> -->
   </div>
 
-  <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Size
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Envelope</a></li>
-    <li><a href="#">Flyer</a></li>
-    <li><a href="#">Newspaper</a></li>
-    <li role="separator" class="divider"></li>
-  </ul>
-</div>
-    <%= f.submit %>
-  </div>
+  <!-- <select class="form-control" name="mails[size]">
+    <option>Newspaper</option>
+    <option>Envelope</option>
+    <option>Letter</option>
+  </select> -->
+  <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
+
+
+  <%= f.submit 'Submit', :class => 'btn btn-default' %>
+
+</form>
 <% end %>
