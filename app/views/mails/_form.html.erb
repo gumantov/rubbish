@@ -16,7 +16,18 @@
     <%= f.text_field :size %>
   </div>
 
-  <div class="actions">
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Size
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Envelope</a></li>
+    <li><a href="#">Flyer</a></li>
+    <li><a href="#">Newspaper</a></li>
+    <li role="separator" class="divider"></li>
+  </ul>
+</div>
     <%= f.submit %>
   </div>
 <% end %>
