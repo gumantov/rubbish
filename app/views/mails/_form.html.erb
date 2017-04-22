@@ -23,6 +23,9 @@
   </select> -->
   <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
 
+  <% f.text_field :user_id %>
+  <% f.text_field :company_id %>
+
 
   <%= f.submit 'Submit', :class => 'btn btn-default' %>
 
