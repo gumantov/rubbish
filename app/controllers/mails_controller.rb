@@ -1,6 +1,7 @@
 class MailsController < ApplicationController
   before_action :set_mail, only: [:show, :edit, :update, :destroy]
 
+
   # GET /mails
   # GET /mails.json
   def index
@@ -51,6 +52,8 @@ class MailsController < ApplicationController
     end
   end
 
+  def about
+  end
   # DELETE /mails/1
   # DELETE /mails/1.json
   def destroy
