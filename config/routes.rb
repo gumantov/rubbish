@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'mails#index'
   resources :companies
   resources :mails
   devise_for :users
