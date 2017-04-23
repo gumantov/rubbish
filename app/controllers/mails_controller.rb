@@ -16,6 +16,7 @@ class MailsController < ApplicationController
   # GET /mails/new
   def new
     @mail = Mail.new
+    @company = Company.new
   end
 
   # GET /mails/1/edit
@@ -25,7 +26,11 @@ class MailsController < ApplicationController
   # POST /mails
   # POST /mails.json
   def create
-    @mail = Mail.new(mail_params)
+    #from params find of create the company by company name
+    @company = Company.find_or_create_by(name: mail_params[:company])
+    p @company
+    #@company.mails.new(size: mail_params[:size])
+    @mail = @company.mails.new(size: mail_params[:size], user: current_user)
 
     respond_to do |format|
       if @mail.save
@@ -72,6 +77,6 @@ class MailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mail_params
-      params.require(:mail).permit(:size)
+      params.require(:mail).permit(:size, :company, :user_id)
     end
 end

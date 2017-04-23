@@ -12,6 +12,11 @@
   <% end %>
 <form>
   <div class="form-group">
+
+    <%= f.label :company %>
+    <%= f.text_field :company, required: true%>
+    <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
+
     <!-- <# f.label :size %> -->
     <!-- <# f.text_field :size %> -->
   </div>
@@ -21,10 +26,7 @@
     <option>Envelope</option>
     <option>Letter</option>
   </select> -->
-  <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
 
-  <% f.text_field :user_id %>
-  <% f.text_field :company_id %>
 
 
   <%= f.submit 'Submit', :class => 'btn btn-default' %>
