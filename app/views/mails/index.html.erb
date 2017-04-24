@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
 <h1> Top Companies sending Junk Mail </h1>
-<%= bar_chart @mails.group(:company_id).count %>
+<%= chart_stacked_company_name %>
 
 
 <table class="table table-hover">
@@ -20,7 +19,7 @@
     <% @mails.each do |mail| %>
       <tr>
         <td><%= mail.company.name %></td>
-        <td><%= mail.size %></td>
+        <td><%= mail.company.company_size %></td>
         <td><%= link_to 'Show', mail %></td>
         <td><%= link_to 'Edit', edit_mail_path(mail) %></td>
         <td><%= link_to 'Destroy', mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
