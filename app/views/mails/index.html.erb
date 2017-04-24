@@ -1,10 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Mails</h1>
 
-<table>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<h1> Top Companies sending Junk Mail </h1>
+<%= bar_chart @mails.group(:company_id).count %>
+
+
+<table class="table table-hover">
   <thead>
     <tr>
+      <th>Company</th>
       <th>Size</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +19,7 @@
   <tbody>
     <% @mails.each do |mail| %>
       <tr>
+        <td><%= mail.company.name %></td>
         <td><%= mail.size %></td>
         <td><%= link_to 'Show', mail %></td>
         <td><%= link_to 'Edit', edit_mail_path(mail) %></td>

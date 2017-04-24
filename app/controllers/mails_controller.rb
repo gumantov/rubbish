@@ -28,7 +28,6 @@ class MailsController < ApplicationController
   def create
     #from params find of create the company by company name
     @company = Company.find_or_create_by(name: mail_params[:company])
-    p @company
     #@company.mails.new(size: mail_params[:size])
     @mail = @company.mails.new(size: mail_params[:size], user: current_user)
 

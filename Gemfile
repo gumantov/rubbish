@@ -53,3 +53,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'chartkick'
+gem 'highcharts-rails', '~> 3.0.0'

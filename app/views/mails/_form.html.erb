@@ -13,8 +13,8 @@
 <form>
   <div class="form-group">
 
-    <%= f.label :company %>
-    <%= f.text_field :company, required: true%>
+    <%= f.label :company,  class: 'form-control' %>
+    <%= f.text_field :company, required: true,  class: 'form-control'%>
     <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
 
     <!-- <# f.label :size %> -->
