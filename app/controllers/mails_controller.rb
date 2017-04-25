@@ -6,6 +6,7 @@ class MailsController < ApplicationController
   # GET /mails.json
   def index
     @mails = Mail.all
+    @companies = Company.all
   end
 
   # GET /mails/1
