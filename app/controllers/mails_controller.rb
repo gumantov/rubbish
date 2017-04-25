@@ -18,6 +18,7 @@ class MailsController < ApplicationController
   def new
     @mail = Mail.new
     @company = Company.new
+    @companies = Company.all
   end
 
   # GET /mails/1/edit

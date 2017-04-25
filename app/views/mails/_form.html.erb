@@ -14,7 +14,15 @@
   <div class="form-group">
 
     <%= f.label :company,  class: 'form-control' %>
-    <%= f.text_field :company, required: true,  class: 'form-control'%>
+    <%= f.text_field :company, required: true,  class: 'form-control', list: "companies" %>
+
+    <datalist id="companies">
+      <% @companies.each {|company| %>
+      <option value="<%= company.name %>" />
+      <% } %>
+    </datalist>
+
+
     <%= f.select :size, ['Newspaper', 'Envelope', 'Letter'], class: 'form-control' %>
 
     <!-- <# f.label :size %> -->
