@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :companies
   resources :mails
   #static pages routes
-  get "statics/about" => 'statics#about'
-  get "statics/contact" => 'statics#contact'
+  get "/about" => 'statics#about'
+  get "/contact" => 'statics#contact'
 
   #devise conf
   devise_for :users
