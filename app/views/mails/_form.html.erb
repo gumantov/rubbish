@@ -14,10 +14,10 @@
   <div class="form-group">
 
     <%= f.label :company,  class: 'form-control' %>
-    <%= f.text_field :company, required: true,  class: 'form-control', list: "companies" %>
+    <%= f.text_field :company, required: true,  class: 'form-control', id: "companies" %>
 
     <datalist id="companies">
-      <% @companies.each {|company| %>
+      <% @companies.each { |company| %>
       <option value="<%= company.name %>" />
       <% } %>
     </datalist>
