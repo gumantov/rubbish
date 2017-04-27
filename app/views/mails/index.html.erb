@@ -2,10 +2,19 @@
 
 
 
+
+<h4>Imagine what could happen if everyone in the planet is telling us how many junk mail they get everyday. </h4>
+<h4>How many unnecessary mail circulates every day? We really want to know and need your help!</h4>
+
 <h1> Top Companies Sending Junk Mail </h1>
 <%= chart_stacked_company_name %>
 
-<%= link_to 'New Mail', new_mail_path, class: "btn btn-default" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Mail', new_mail_path, class: "btn btn-default" %>
+<% else %>
+  <h4>Please Sign in and let us know how many Junk mail you got today.</h4>
+  <img src="http://www1.nyc.gov/assets/greenyc/images/content/titles/junk_mail_header.jpg" width="300" >
+<% end %>
 
 
 
