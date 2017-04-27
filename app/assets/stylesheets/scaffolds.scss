@@ -1,10 +1,20 @@
 body {
   background-color: #fff;
-  color: #333;
+  color:#808080	;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+  text-align: center;
+}
+
+.jumbotron {background-color: #ddf4d4;
+  text-align: center;
+}
+.btn-default { margin-top: 20px;
+}
+.highchart-background {
+  text-align: center;
 }
 
 p, ol, ul, td {
@@ -35,6 +45,7 @@ a {
 
 th {
   padding-bottom: 5px;
+  text-align: center;
 }
 
 td {

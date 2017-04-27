@@ -14,7 +14,7 @@
   <div class="form-group">
 
     <%= f.label :company,  class: 'form-control' %>
-    <%= f.text_field :company, required: true,  class: 'form-control', id: "companies" %>
+    <%= f.text_field :company, required: true,  class: 'form-control', id: "companies", value: @mail.company.nil? ? "" : @mail.company.name %>
 
     <datalist id="companies">
       <% @companies.each { |company| %>

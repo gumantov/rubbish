@@ -23,6 +23,7 @@ class MailsController < ApplicationController
 
   # GET /mails/1/edit
   def edit
+    @companies = Company.all
   end
 
   # POST /mails
@@ -31,8 +32,7 @@ class MailsController < ApplicationController
     #from params find of create the company by company name
     @company = Company.find_or_create_by(name: mail_params[:company])
     #@company.mails.new(size: mail_params[:size])
-    @mail = @company.mails.new(size: mail_params[:size], user: current_user)
-
+    @mail = @company.mails.new(size: mail_params[:size], user_id: current_user.id)
     respond_to do |format|
       if @mail.save
         format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
