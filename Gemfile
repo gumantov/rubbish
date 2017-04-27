@@ -62,3 +62,4 @@ gem 'chartkick'
 gem 'highcharts-rails', '~> 3.0.0'
 gem 'rails4-autocomplete'
 gem "jquery-ui-rails"
+gem 'geocoder'
